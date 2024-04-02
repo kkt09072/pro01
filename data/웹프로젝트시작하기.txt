@@ -1,0 +1,83 @@
+1) 이클립스를 d:\kim\pro01 을 워크스페이스로 변경하여 실행
+
+2) [Window]-[Preferences]-[General]-[Workspace]-[Text file encoding] : Other -> UTF-8 선택
+[Window]-[Preferences]-[Java]-[Compiler] : JDK Compilance : Compiler compliance level -> 11 선택
+[Window]-[Preferences]-[Java]-[Installed JREs] : Installed JREs -> zulu-11 체크
+[Window]-[Preferences]-[Web]-[CSS Files] : Creating files -> Encoding : ISO 10646/Unicode(UTF-8) 선택
+[Window]-[Preferences]-[Web]-[HTML Files] : Creating files -> Encoding : ISO 10646/Unicode(UTF-8) 선택
+[Window]-[Preferences]-[Web]-[JSP Files] : Creating files -> Encoding : ISO 10646/Unicode(UTF-8) 선택
+
+위 값 모두 확인 및 설정하고, [Apply and Close] 버튼 클릭
+
+
+3) 개발용 Tomcat 9 서버 추가
+[Servers] 패널 -> [No servers are available. Click this link to create a new server...] 링크 클릭
+-> [New Server] 대화상자에서 [Apache] 폴더 안에 있는 [Tomcat v9.0 Server] 선택, [Next] 클릭
+-> [Brows...] 버튼을 클릭하여 압축을 해제한 서버 디렉토리를 선택하고, [JRE] 항목에서 zulu-11 선택, [Finish] 버튼 클릭
+
+4) Web Project 추가
+[File]-[New]-[Other...]-[Web]-[Dynamic Web Project]  .... // 
+[New Dynamic Web Project] 대화상자에서
+1단계
+	[Project name] : pro01 입력
+	[Dynamic web module version] : 3.0 선택
+	[Next] 버튼 클릭
+2단계
+	[Next] 버튼 클릭
+3단계
+	Generate web.xml deployment descriptor 체크
+	[Finish] 버튼 클릭
+
+project 추가 : pro01   
+//d:kim/pro01/pro01
+
+5) Web Project 설정
+[Package Explorer] 패널의 pro01 프로젝트에서 마우스 오른쪽 버튼 -> [Properties] -> 
+
+[Properties for pro01] 대화상자에서
+[Resource] 항목 선택 : Text file encoding - Other: UTF-8 선택
+[Java Compiler] 항목 선택 -> Compiler comliance level : 11 선택
+[Project Facets] 항목 선택 -> Dynamic Web Module : 3.0 선택, Java : 11 선택, Javascript : 1.0 선택
+[Java Build Path] 항목 선택 -> Source 탭 -> Default output folder 항목의 오른쪽 [Browse...] 버튼을 클릭하여 경로를 "pro01/WebContent/WEB-INF/classes" 로 변경
+					(classes 디렉토리는 새로 생성 후에 지정)
+
+위 값 모두 확인 및 설정하고, [Apply and Close] 버튼 클릭
+
+
+6) 필요한 기본 라이브러리 추가
+본인의 library 디렉토리 에서
+	el-api.jar
+	mariadb-java-client-3.1.4.jar 추가
+	javax.servlet-api-4.0.1.jar
+	jsp-api.jar
+	jstl-1.2.jar
+	mariadb-java-client-3.0.3.jar
+	mysql-connector-java-8.0.30.jar
+	ojdbc11.jar
+	servlet-api.jar
+	standard-1.1.2.jar
+등을 복사하여
+[Package Explorer] 의 pro01\WebContent\WEB-INF\lib 디렉토리 안에 붙여넣기 
+
+
+7) WebContent/head.jsp 작성(index.html에 있는 메타포,오픈그래프,파비콘,css라이브러리,js라이브러리 코드 등을 복사하여 붙여넣기...path를 등록하여 위치 맞추기)
+images 디렉토리 및 동영상, css 등 모든 리소스 디렉토리 복사하여
+WebContent 디렉토리에 복사하여 붙여넣기
+
+8) WebContent/index.jsp에 <head></head> 사이(title 태그 밑)에 <%@ include file="head.jsp" %> 인클루드
+
+9) WebContent/header.jsp 작성(index.html 에 있는 header 태그 안의 소스 코드를 모두 복사하여 붙여넣기)
+
+10) WebContent/footer.jsp 작성(index.html 에 있는 footer 태그 안의 소스 코드를 모두 복사하여 붙여넣기)
+
+11) WebContent/index.jsp 에 아래와 같이 인클루드
+<header class="hd" id="hd">
+	<%@ include file="header.jsp" %> 
+</header>
+<div class="contents">
+	....//contents 클래스의 내용을 붙여 넣기
+</div>
+<footer class="ft" id="ft">
+	<%@ include file="footer.jsp" %> 
+</footer>
+
