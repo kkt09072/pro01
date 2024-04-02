@@ -1,0 +1,19 @@
+package org.gasan.dto;
+
+public class Traffic {
+	private int tno;
+	private String ttype;
+	private String no;
+	private String route;
+	private String coment;
+	public Traffic() { }
+	public Traffic(int tno, String ttype, String no, String route, String coment) {
+		super();
+		this.tno = tno;
+		this.ttype = ttype;
+		this.no = no;
+		this.route = route;
+		this.coment = coment;
+	}
+	
+}

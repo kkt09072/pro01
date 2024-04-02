@@ -1,0 +1,5 @@
+package org.gasan.dto;
+
+public class Notice {
+
+}

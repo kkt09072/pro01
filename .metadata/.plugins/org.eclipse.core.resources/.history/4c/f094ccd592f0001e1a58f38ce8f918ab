@@ -1,0 +1,23 @@
+package org.gasan.dto;
+
+public class Guide {
+	private int pcode;
+	private String pname;
+	private String ptype;
+	private String paddr;
+	private String ptel;
+	private String pgps;
+	private String pcoment;
+	public Guide() { }
+	public Guide(int pcode, String pname, String ptype, String paddr, String ptel, String pgps, String pcoment) {
+		super();
+		this.pcode = pcode;
+		this.pname = pname;
+		this.ptype = ptype;
+		this.paddr = paddr;
+		this.ptel = ptel;
+		this.pgps = pgps;
+		this.pcoment = pcoment;
+	}
+	
+}
