@@ -57,7 +57,7 @@
 
 #### 4-1.1. 자료 수집
 
-![워드클라우드](./design/cardSorting.png)
+![워드클라우드](./design/wordcloud2.png)
 
 <br>
 
