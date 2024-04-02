@@ -123,7 +123,7 @@
 
 #### 4-2-3. 물리적 설계
 
-![물리적모델링](./design/physical_erd.png)
+![물리적모델링](./design/physical_erd2.png)
 
 <br>
 
