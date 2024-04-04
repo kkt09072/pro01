@@ -1,0 +1,6 @@
+package org.gasan.dao;
+
+public interface SqlLang {
+	String SELECT_ALL_MEMBER = "select * from member";
+	
+}

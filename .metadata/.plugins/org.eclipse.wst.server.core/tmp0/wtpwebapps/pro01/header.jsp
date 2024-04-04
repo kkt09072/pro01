@@ -23,7 +23,15 @@
 		</ul>
 	</nav>
 	<nav id="gnb">
-		<h2>메인메뉴</h2>
+		<ul class="main_menu">
+			<li><a href="">커뮤니티</a>
+				<ul>
+					<li><a href="${hpath }/notiList.do">공지사항</a></li>
+					<li><a href="">자료실</a></li>
+					<li><a href="">묻고답하기</a></li>
+				</ul>
+			</li>
+		</ul>
 	</nav>
 </header> 
 <hr>

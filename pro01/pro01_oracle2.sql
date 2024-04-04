@@ -1,1 +1,1 @@
-select * from qna;
+select * from notice;

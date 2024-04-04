@@ -1,0 +1,16 @@
+package org.gasan.dao;
+
+public class DataCon {
+	final String Driver = "oracle.jdbc.oracleDriver";
+	final String Url = ""; 
+	
+	public void Connect() {
+		try {
+			Class.forName(Driver);
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}
