@@ -31,6 +31,9 @@ public class NoticeListCtrl extends HttpServlet {
 		List<Notice> notiList = new ArrayList<>();
 		notiList = dao.getNoticeList();
 		
+		for(Notice n:notiList) {
+			System.out.println(n.toString());
+		}
 		
 		request.setAttribute("notiList", notiList);
 		

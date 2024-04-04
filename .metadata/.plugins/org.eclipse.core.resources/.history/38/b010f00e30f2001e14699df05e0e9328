@@ -39,7 +39,6 @@ public class NoticeDAO {
 		} finally {
 			oracle.close(con, pstmt, rs);
 		}
-		
 		return notiList;
 	}
 }
