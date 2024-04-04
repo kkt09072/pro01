@@ -15,9 +15,6 @@
 #page1 { background-color:#ececec; }
 #page2 { background-color:#42bcf5; }
 .page_title { font-size:36px; padding-top:2em; text-align:center; }
-th.item1 { width:8%; }
-th.item2 { width:60%; }
-th.item3 { width:20%; }
 </style>
 </head>
 <body>

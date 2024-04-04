@@ -15,6 +15,9 @@
 #page1 { background-color:#ececec; }
 #page2 { background-color:#42bcf5; }
 .page_title { font-size:36px; padding-top:2em; text-align:center; }
+th.item1 { width:8%; }
+th.item2 { width:60%; }
+th.item3 { width:20%; }
 </style>
 </head>
 <body>
@@ -26,19 +29,29 @@
 		<div style="width:1400px; margin:0 auto;">
 			<h3 class="page_title">공지사항 목록</h3>
 			<div>
-				<table class="table">
+				<table class="table table-dark">
 					<thead>
 						<tr>
-							<th>번호</th><th>제목</th><th>작성일</th><th>조회수</th>
+							<th class="item1">번호</th>
+							<th class="item2">제목</th>
+							<th class="item3">작성일</th>
+							<th class="item4">조회수</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="dto" items="${notiList }">
-						<tr>
-							<td>${dto.no }</td><td>${dto.title }</td>
-							<td>${dto.resdate }</td><td>${dto.visited }</td>
-						</tr>
-						</c:forEach>
+						<c:if test="${not empty notiList }">
+							<c:forEach var="dto" items="${notiList }">
+							<tr>
+								<td>${dto.no }</td><td>${dto.title }</td>
+								<td>${dto.resdate }</td><td>${dto.visited }</td>
+							</tr>
+							</c:forEach>
+						</c:if>
+						<c:if test="${empty notiList }">
+							<tr>
+								<td colspan="4"><strong>공지사항이 존재하지 않습니다.</strong></td>
+							</tr>
+						</c:if>
 					</tbody>
 				</table>
 			</div>
