@@ -42,7 +42,8 @@ th.item3 { width:20%; }
 						<c:if test="${not empty notiList }">
 							<c:forEach var="dto" items="${notiList }">
 							<tr>
-								<td>${dto.no }</td><td>${dto.title }</td>
+								<td>${dto.no }</td>
+								<td><a href="${path0 }/GetNotice.do?no=${dto.no }">${dto.title }</a></td>
 								<td>${dto.resdate }</td><td>${dto.visited }</td>
 							</tr>
 							</c:forEach>
@@ -54,6 +55,10 @@ th.item3 { width:20%; }
 						</c:if>
 					</tbody>
 				</table>
+				<hr>
+				<div class="btn-group">
+				  <a href="${path0 }/notice/noti_ins.jsp" class="btn btn-secondary">글 등록</a>
+				</div>
 			</div>
 		</div>
 	</section>

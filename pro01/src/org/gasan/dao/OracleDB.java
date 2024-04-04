@@ -14,7 +14,7 @@ public class OracleDB implements SqlLang {
 	
 	Connection con = null;
 	
-	public Connection Connect() {
+	public Connection connect() {
 		try {
 			Class.forName(DRIVER);
 			try {
