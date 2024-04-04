@@ -28,7 +28,7 @@ public class Main extends HttpServlet {
 		ServletContext application = request.getServletContext();
 		String realPath = request.getSession().getServletContext().getRealPath("/");
 		application.setAttribute("realPath", realPath);
-		
+		application.setAttribute("title", "가산동 소개");
 		List<Notice> latestNotiList = new ArrayList<>();
 		List<Qna> latestQnaList = new ArrayList<>();
 		
