@@ -1,11 +1,18 @@
 package org.gasan.ctrl;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.gasan.dao.NoticeDAO;
+import org.gasan.dto.Notice;
 
 @WebServlet("/NotiList.do")
 public class NoticeListCtrl extends HttpServlet {
@@ -16,7 +23,22 @@ public class NoticeListCtrl extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
+		NoticeDAO dao = new NoticeDAO();
+		List<Notice> notiList = new ArrayList<>();
+		notiList = dao.getNoticeList();
+		
+		for(Notice n:notiList) {
+			System.out.println(n.toString());
+		}
+		
+		request.setAttribute("notiList", notiList);
+		
+		RequestDispatcher view = request.getRequestDispatcher("/notice/noticeList.jsp");
+		view.forward(request, response);
 		
 	}
 

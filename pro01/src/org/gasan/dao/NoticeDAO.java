@@ -20,9 +20,8 @@ public class NoticeDAO {
 		OracleDB oracle = new OracleDB();
 		try {
 			con = oracle.Connect();
-		} catch(Exception e) {
 			try {
-				pstmt = con.prepareStatement(oracle.SELECT_ALL_NOTICE);
+				pstmt = con.prepareStatement(SqlLang.SELECT_ALL_NOTICE);
 				rs = pstmt.executeQuery();
 				while(rs.next()) {
 					Notice noti = new Notice(rs.getInt("no"),
@@ -34,9 +33,11 @@ public class NoticeDAO {
 				}
 			} catch (SQLException e1) {
 				e1.printStackTrace();
-			} finally {
-				oracle.close(con, pstmt, rs);
-			}
+			} 
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			oracle.close(con, pstmt, rs);
 		}
 		return notiList;
 	}
