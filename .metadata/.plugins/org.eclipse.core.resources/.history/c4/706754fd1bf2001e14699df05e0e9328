@@ -12,9 +12,6 @@
 <style>
 .container { width:1400px; }
 .page { clear:both; height:100vh; }
-#page1 { background-color:#ececec; }
-#page2 { background-color:#42bcf5; }
-.page_title { font-size:36px; padding-top:2em; text-align:center; }
 </style>
 </head>
 <body>
@@ -23,18 +20,16 @@
 </div>
 <div id="contents">
 	<h2>콘텐츠 영역</h2>
-	<section class="page" id="page1">
+	<section class="page" style="background-color:#ececec">
 		<div style="width:1400px; margin:0 auto;">
 			<h3 class="page_title">제작자 : ${author }</h3>
 		</div>
 	</section>
-	<section class="page" id="page2">
-		<div style="width:1400px; margin:0 auto;">	
-			<h3 class="page_title">임시 서버 애플리케이션 디렉토리 : ${realPath }</h3>
-			<h3>main 프로젝트 디렉토리 : ${path0 }</h3>
-			<h3>head 프로젝트 디렉토리 : ${ipath }</h3>
-			<h3>header 프로젝트 디렉토리 : ${hpath }</h3>
-		</div>	
+	<section class="page">	
+		<h3>임시 서버 애플리케이션 디렉토리 : ${realPath }</h3>
+		<h3>main 프로젝트 디렉토리 : ${path0 }</h3>
+		<h3>head 프로젝트 디렉토리 : ${ipath }</h3>
+		<h3>header 프로젝트 디렉토리 : ${hpath }</h3>
 	</section>	
 </div>
 <div id="footer">
