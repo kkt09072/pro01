@@ -30,34 +30,35 @@ th.item3 { width:20%; }
 			<h3 class="page_title">공지사항 상세보기</h3>
 			<div>
 				<table class="table">
-					<thead>
-						<tr>
-							<th class="item1">번호</th>
-							<th class="item2">제목</th>
-							<th class="item3">작성일</th>
-							<th class="item4">조회수</th>
-						</tr>
-					</thead>
 					<tbody>
-						<c:if test="${not empty notiList }">
-							<c:forEach var="dto" items="${notiList }">
-							<tr>
-								<td>${dto.no }</td>
-								<td><a href="${path0 }/GetNotice.do?no=${dto.no }">${dto.title }</a></td>
-								<td>${dto.resdate }</td><td>${dto.visited }</td>
-							</tr>
-							</c:forEach>
-						</c:if>
-						<c:if test="${empty notiList }">
-							<tr>
-								<td colspan="4"><strong>공지사항이 존재하지 않습니다.</strong></td>
-							</tr>
-						</c:if>
+						<tr>
+							<th>글 번호</th>
+							<td>${noti.no }</td>
+						</tr>
+						<tr>
+							<th>글 제목</th>
+							<td>${noti.title }</td>
+						</tr>
+						<tr>
+							<th>글 내용</th>
+							<td>${noti.content }</td>
+						</tr>
+						<tr>
+							<th>작성일시</th>		
+							<td>${noti.resdate }</td>
+						</tr>
+						<tr>
+							<th>조회수</th>
+							<td>${noti.visited }</td>
+						</tr>
 					</tbody>
 				</table>
 				<hr>
 				<div class="btn-group">
 				  <a href="${path0 }/notice/noti_ins.jsp" class="btn btn-secondary">글 등록</a>
+				  <a href="${path0 }/EditNotice.do?no=${noti.no }" class="btn btn-secondary">글 수정</a>
+				  <a href="${path0 }/DelNotice.do?no=${noti.no }" class="btn btn-secondary">글 삭제</a>
+				  <a href="${path0 }/NotiList.do" class="btn btn-secondary">글 목록</a>
 				</div>
 			</div>
 		</div>

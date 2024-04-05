@@ -45,6 +45,7 @@
 				<hr>
 				<div class="btn-group">
 				  <button type="submit" class="btn btn-secondary">글 등록</button>
+				  <a href="${path0 }/NotiList.do" class="btn btn-secondary">글 목록</a>
 				</div>
 			</form>
 		</div>
