@@ -69,7 +69,7 @@ public class NoticeDAO {
 		OracleDB oracle = new OracleDB();
 		try {
 			con = oracle.connect();
-			pstmt = con.prepareStatement(SqlLang.INS_NOTICE);
+			pstmt = con.prepareStatement(OracleDB.INS_NOTICE);
 			pstmt.setString(1, noti.getTitle());
 			pstmt.setString(2, noti.getContent());
 			cnt = pstmt.executeUpdate();

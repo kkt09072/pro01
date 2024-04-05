@@ -11,7 +11,7 @@ public class OracleDB implements SqlLang {
 	final static String URL = "jdbc:oracle:thin:@localhost:1521:xe"; 
 	final static String USERID = "system";
 	final static String USERPW = "1234";
-	
+	final static String INS_NOTICE = "insert into notice values (nseq.nextval, ?, ?, sysdate, 0)";
 	Connection con = null;
 	
 	public Connection connect() {

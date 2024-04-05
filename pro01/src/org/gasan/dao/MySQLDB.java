@@ -11,7 +11,7 @@ public class MySQLDB implements SqlLang {
 	final static String URL = "jdbc:mysql://localhost:3306/kh"; 
 	final static String USERID = "root";
 	final static String USERPW = "1234";
-	
+	final static String INS_NOTICE = "insert into notice values (default, ?, ?, default, 0)";
 	Connection con = null;
 	
 	public Connection Connect() {
