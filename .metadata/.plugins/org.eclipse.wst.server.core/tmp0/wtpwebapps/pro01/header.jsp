@@ -10,11 +10,12 @@
 	<nav id="tnb">
 		<ul>
 			<c:if test="${empty sid }">
-			<li><a href="${hpath }/member/">로그인</a></li>
+			<li><a href="${hpath }/member/login.jsp">로그인</a></li>
 			<li><a href="${hpath }/member/">회원가입</a></li>
 			</c:if>
 			<c:if test="${not empty sid }">
-			<li><a href="${hpath }/member/">로그아웃</a></li>
+			<li><strong>${sname } 님 환영합니다.</strong></li>
+			<li><a href="${hpath }/LogOut.do">로그아웃</a></li>
 			<li><a href="${hpath }/member/">회원정보</a></li>
 			</c:if>
 			<c:if test="${sid.equals('admin') }">

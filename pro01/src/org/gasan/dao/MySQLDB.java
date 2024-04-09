@@ -5,16 +5,17 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+//MySQL용
 public class MySQLDB implements SqlLang {
-	final static String DRIVER = "org.mysql.jdbc.Driver";
+	final static String DRIVER = "org.mysql.cj.jdbc.Driver";
 	final static String URL = "jdbc:mysql://localhost:3306/kh"; 
 	final static String USERID = "root";
 	final static String USERPW = "1234";
 	final static String INS_NOTICE = "insert into notice values (default, ?, ?, default, 0)";
 	Connection con = null;
 	
-	public Connection Connect() {
+	@Override
+	public Connection connect() {
 		try {
 			Class.forName(DRIVER);
 			try {
@@ -28,6 +29,7 @@ public class MySQLDB implements SqlLang {
 		return con;
 	}
 	
+	@Override
 	public void close(Connection con, PreparedStatement pstmt) {
 		if(pstmt!=null) {
 			try {
@@ -44,6 +46,8 @@ public class MySQLDB implements SqlLang {
 			}
 		}
 	}
+	
+	@Override
 	public void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
 		if(rs!=null) {
 			try {

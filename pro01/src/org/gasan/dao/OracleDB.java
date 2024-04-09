@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+//Oracle용
 public class OracleDB implements SqlLang {
 	final static String DRIVER = "oracle.jdbc.OracleDriver";
 	final static String URL = "jdbc:oracle:thin:@localhost:1521:xe"; 
@@ -14,6 +14,7 @@ public class OracleDB implements SqlLang {
 	final static String INS_NOTICE = "insert into notice values (nseq.nextval, ?, ?, sysdate, 0)";
 	Connection con = null;
 	
+	@Override
 	public Connection connect() {
 		try {
 			Class.forName(DRIVER);
@@ -28,6 +29,7 @@ public class OracleDB implements SqlLang {
 		return con;
 	}
 	
+	@Override
 	public void close(Connection con, PreparedStatement pstmt) {
 		if(pstmt!=null) {
 			try {
@@ -44,6 +46,8 @@ public class OracleDB implements SqlLang {
 			}
 		}
 	}
+	
+	@Override
 	public void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
 		if(rs!=null) {
 			try {

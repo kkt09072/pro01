@@ -13,10 +13,10 @@ import org.gasan.dao.NoticeDAO;
 import org.gasan.dto.Notice;
 
 @WebServlet("/NotiIns.do")
-public class notiInsCtrl extends HttpServlet {
+public class NotiInsCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public notiInsCtrl() {
+    public NotiInsCtrl() {
         super();
     }
 

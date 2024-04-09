@@ -1,0 +1,14 @@
+package org.gasan.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.gasan.dto.Member;
+
+public class MemberDAO {
+	public List<Member> getMemberList(){
+		List<Member> memList = new ArrayList<>();
+		
+		return memList;
+	}
+}

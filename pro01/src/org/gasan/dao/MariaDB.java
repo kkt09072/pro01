@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class MariaDB implements SqlLang {
+public class MariaDB {
 	final static String DRIVER = "org.mariadb.jdbc.Driver";
 	final static String URL = "jdbc:mariadb://localhost:3308/temp"; 
 	final static String USERID = "root";

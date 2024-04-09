@@ -1,0 +1,7 @@
+package org.gasan.dao;
+
+public class MemberDAO {
+	public List<Member> getMemberList(){
+		
+	}
+}
