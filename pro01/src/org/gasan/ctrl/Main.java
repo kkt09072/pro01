@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.gasan.dao.NoticeDAO;
 import org.gasan.dto.Notice;
 import org.gasan.dto.Qna;
 
@@ -29,13 +30,13 @@ public class Main extends HttpServlet {
 		String realPath = request.getSession().getServletContext().getRealPath("/");
 		application.setAttribute("realPath", realPath);
 		application.setAttribute("title", "가산동 소개");
-		List<Notice> latestNotiList = new ArrayList<>();
-		List<Qna> latestQnaList = new ArrayList<>();
+				
+		NoticeDAO ndao = new NoticeDAO();
+		List<Notice> latestNotiList = ndao.getLatestNoticeList();
+//		List<Qna> latestQnaList = new ArrayList<>();
 		
-//		request.setAttribute("latestNotiList", latestNotiList);
+		request.setAttribute("latestNotiList", latestNotiList);
 //		request.setAttribute("latestQnaList", latestQnaList);
-		request.setAttribute("author", author);
-		request.setAttribute("exo1", "./images/exo1.jpg");
 		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/index.jsp");
 		view.forward(request, response);
 	}

@@ -1,4 +1,7 @@
 @charset "UTF-8";
+body, html { font-family: "Noto Sans KR", sans-serif; }
+h1, h2, h3 { font-weight:600; }
+h4, h5, h6 { font-weight:400; }
 #header { clear:both; height:120px; }
 .logo_wrap { float:left; width:128px; height:auto; margin-left:100px; }
 .logo_wrap a { display:block; width:100%; height:auto; }

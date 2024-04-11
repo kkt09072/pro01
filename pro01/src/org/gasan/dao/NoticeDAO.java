@@ -13,6 +13,29 @@ public class NoticeDAO {
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	
+	public List<Notice> getLatestNoticeList(){
+		List<Notice> notiList = new ArrayList<>();
+		OracleDB oracle = new OracleDB();
+		try {
+			con = oracle.connect();
+			pstmt = con.prepareStatement(OracleDB.LATEST_NOTICE);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Notice noti = new Notice(rs.getInt("no"),
+						rs.getString("title"),
+						rs.getString("content"),
+						rs.getString("resdate"),
+						rs.getInt("visited"));
+				notiList.add(noti);
+			}
+		} catch(Exception e){
+			e.printStackTrace();
+		} finally {
+			oracle.close(con, pstmt, rs);
+		}
+		return notiList;
+	}
+	
 	public List<Notice> getNoticeList(){
 		List<Notice> notiList = new ArrayList<>();
 		OracleDB oracle = new OracleDB();

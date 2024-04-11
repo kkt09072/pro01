@@ -11,6 +11,9 @@
 		<c:if test="${not empty sid }">
 		<h2 style="text-align:center;">${sname } 님 환영합니다.</h2>
 		</c:if>
+		<c:if test="${empty sid }">
+		<h2 style="text-align:center;">모든 서비스를 활용시 로그인 요망</h2>
+		</c:if>
 	</div>
 	<nav id="gnb">
 		<ul class="">
