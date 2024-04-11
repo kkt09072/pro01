@@ -1,0 +1,45 @@
+@charset "UTF-8";
+body, html { font-family: "Noto Sans KR", sans-serif; }
+h1, h2, h3 { font-weight:600; }
+h4, h5, h6 { font-weight:400; }
+#header { clear:both; height:120px; }
+.logo_wrap { float:left; width:128px; height:auto; margin-left:100px; }
+.logo_wrap a { display:block; width:100%; height:auto; }
+.logo_wrap a img { display:block; width:100%; height:auto; }
+#gnb { clear:both; display:block; width:1280px; height:50px; 
+margin:15px auto; }
+#gnb a { text-decoration:none; }
+#gnb ul { list-style:none; }
+#gnb .item { float:left; width:25%; position:relative; }
+#gnb a.dp1 { display:block; line-height:38px; text-align:center; 
+background-color:#333; color:#fff; }
+#gnb .sub_menu { display:none; position:absolute; top:38px; left:0px; 
+padding:0; width:100%; z-index:999; }
+#gnb .item:hover .sub_menu { display:block; }
+#gnb .item:hover a.dp1 { background-color:deepskyblue; }
+#gnb .item .sub_menu li { margin:0; padding:0; 
+text-indent:90px; line-height:32px;  width:100%;
+background-color:#659ffc; }
+#gnb .item .sub_menu li:hover { background-color:deepskyblue; }
+#gnb .item .sub_menu li a { color:#fff; }
+#contents { clear:both; }
+
+.breadcrumb { justify-content: flex-end; }
+#vs { clear:both; width:100%; height:800px; overflow:hidden; }
+#vs img { display:block; width:100%; height:auto; margin-top:-250px;}
+.page_title { padding-bottom:1.4rem; }
+.jumbotron {background-color:#dcfae4; border-radius:24px; margin-top:32px;
+padding:2rem; font-size:1.4rem; }
+.map_data { width:400px; height:auto; }
+.map_data img { display:block; width:100%; height:auto; }
+
+.ft_wrap { width:1400px; margin:0 auto; }
+#fnb { width:800px; height:48px; float:left; }
+#fnb ul { list-style:none; margin:0px; padding:0px; clear:both; height:48px; }
+#fnb li { float:left; width:150px; text-align:left; line-height:48px; }
+#fnb li a { color:#fff; }
+#loc { width:100px; height:30px; line-height:30px; margin-top:10px; float:right; }
+#copyright { clear:both; margin-top:18px; width:100%; }
+
+#footer { background-color:#2c2c2c; padding-top:20px; padding-bottom:40px; 
+color:#fff; }
