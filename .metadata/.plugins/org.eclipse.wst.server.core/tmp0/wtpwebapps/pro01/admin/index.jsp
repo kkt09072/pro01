@@ -27,7 +27,7 @@
 		<aside id="lnb" class="col-3">
 			<nav>
 				<ul>
-					<li><a href="${path0 }/MemberList.do">회원목록</a></li>
+					<li><a href="${path0 }/MemberList.do">회원관리</a></li>
 					<li><a href="${path0 }/NotiList.do">게시판 관리</a></li>
 				</ul>
 			</nav>

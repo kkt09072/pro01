@@ -12,7 +12,7 @@
 <style>
 .container { width:1400px; }
 .page { clear:both; height:100vh; }
-#page1 { background-color:#ececec; }
+#page1 { background-color:#ececec; height:calc(100vh - 158px); }
 #page2 { background-color:#42bcf5; }
 .page_title { font-size:36px; padding-top:2em; text-align:center; }
 </style>
@@ -22,20 +22,50 @@
 	<%@ include file="/header.jsp" %>
 </div>
 <div id="contents">
-	<h2>콘텐츠 영역</h2>
 	<section class="page" id="page1">
-		<div style="width:1400px; margin:0 auto;">
-			<h3 class="page_title">제작자 : ${author }</h3>
-		</div>
+		<figure id="vs">
+			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+			  <div class="carousel-inner">
+			    <div class="carousel-item active">
+			      <img src="${path0 }/images/vs4.png" class="d-block w-100" alt="...">
+			    </div>
+			    <div class="carousel-item">
+			      <img src="${path0 }/images/vs5.png" class="d-block w-100" alt="...">
+			    </div>
+			    <div class="carousel-item">
+			      <img src="${path0 }/images/vs6.png" class="d-block w-100" alt="...">
+			    </div>
+			  </div>
+			 <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			  </button>
+			  <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+			    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			  </button>
+			</div>
+		</figure>
+		<h3 class="page_title"></h3>
 	</section>
 	<section class="page" id="page2">
 		<div style="width:1400px; margin:0 auto;">	
-			<h3 class="page_title">임시 서버 애플리케이션 디렉토리 : ${realPath }</h3>
-			<h3>main 프로젝트 디렉토리 : ${path0 }</h3>
-			<h3>head 프로젝트 디렉토리 : ${ipath }</h3>
-			<h3>header 프로젝트 디렉토리 : ${hpath }</h3>
+			<h3 class="page_title">공지사항</h3>
+			
 		</div>	
-	</section>	
+	</section>
+	<section class="page" id="page3">
+		<div style="width:1400px; margin:0 auto;">	
+			<h3 class="page_title">묻고 답하기</h3>
+			
+		</div>	
+	</section>
+	<section class="page" id="page4">
+		<div style="width:1400px; margin:0 auto;">	
+			<h3 class="page_title">Hot Place</h3>
+			
+		</div>	
+	</section>
 </div>
 <div id="footer">
 	<%@ include file="/footer.jsp" %>

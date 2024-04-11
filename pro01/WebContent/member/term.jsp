@@ -27,7 +27,7 @@
 		<div style="width:1400px; margin:0 auto;">${msg }</div>
 		</c:if>
 		<div style="width:1400px; margin:0 auto;">
-			<h3 class="page_title"><i class="fas fa-user-tag fa-fw"></i>회원약관</h3>
+			<h3 class="page_title"><i class="fas fa-user-tag fa-fw"></i> 회원약관</h3>
 			<hr>
 			<h4 class="title">회원 약관 동의</h4>
 			<textarea class="form-control" rows="12" readonly>

@@ -55,7 +55,10 @@ th.item5 { width:20%; }
 							<c:if test="${not empty memList }">
 								<c:forEach var="dto" items="${memList }" varStatus="status">
 								<tr>
-									<td>${status.count }</td>
+									<td>
+										<input type="checkbox" name="id" id="id${status.count }" value="${dto.id }">
+										${status.count }
+									</td>
 									<td>${dto.id }</td>
 									<td>${dto.pw }</td>
 									<td>${dto.name }</td>
