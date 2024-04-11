@@ -9,6 +9,8 @@
 <meta charset="UTF-8">
 <title>${title }</title>
 <%@ include file="/head.jsp" %>
+<script src="${path0 }/js/jquery.dataTables.js"></script>
+<link rel="stylesheet" href="${path0 }/css/jquery.dataTables.css" >
 <style>
 .container { width:1400px; }
 .page { clear:both; height:100vh; }
@@ -29,7 +31,7 @@ th.item3 { width:20%; }
 		<div style="width:1400px; margin:0 auto;">
 			<h3 class="page_title">공지사항 목록</h3>
 			<div>
-				<table class="table table-dark">
+				<table class="table" id="tb1">
 					<thead>
 						<tr>
 							<th class="item1">번호</th>
@@ -62,6 +64,13 @@ th.item3 { width:20%; }
 						</c:if>
 					</tbody>
 				</table>
+				<script>
+				$(document).ready(function(){
+					$("#tb1").DataTable({
+						order:[[0,"desc"]]
+					});
+				});
+				</script>
 				<hr>
 				<c:if test="${sid.equals('admin') }">
 				<div class="btn-group">

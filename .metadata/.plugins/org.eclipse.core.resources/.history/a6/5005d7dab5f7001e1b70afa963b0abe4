@@ -64,13 +64,6 @@ th.item3 { width:20%; }
 						</c:if>
 					</tbody>
 				</table>
-				<script>
-				$(document).ready(function(){
-					$("#tb1").DataTable({
-						order:[[0,"desc"]]
-					});
-				});
-				</script>
 				<hr>
 				<c:if test="${sid.equals('admin') }">
 				<div class="btn-group">
