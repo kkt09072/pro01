@@ -11,8 +11,8 @@
 <%@ include file="/head.jsp" %>
 <style>
 .container { width:1400px; }
-.page { clear:both; height:100vh; }
-#page1 { background-color:#ececec; height:calc(100vh - 158px); }
+.page { clear:both; min-height:100vh; margin:0; padding:0; }
+#page1 { background-color:#ececec; min-height:calc(100vh - 158px); }
 #page2 { background-color:#ffffff; }
 #page3 { background-color:#ececec; }
 #page4 { background-color:#ffffff; }

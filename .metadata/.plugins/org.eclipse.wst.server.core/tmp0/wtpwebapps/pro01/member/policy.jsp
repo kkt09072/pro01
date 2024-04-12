@@ -23,6 +23,16 @@
 </div>
 <div id="contents">
 	<section class="page" id="page1">
+		<div style="width:1400px; margin:0 auto;">
+			<nav aria-label="breadcrumb d-flex justify-content-between">
+			  <ol class="breadcrumb">
+			    <li class="breadcrumb-item"><a href="#">Home</a></li>
+			    <li class="breadcrumb-item"><a href="#">회원</a></li>
+			    <li class="breadcrumb-item active" aria-current="page">개인정보처리방침</li>
+			  </ol>
+			</nav>
+		</div>
+		<hr>
 		<c:if test="${not empty msg}">
 		<div style="width:1400px; margin:0 auto;">${msg }</div>
 		</c:if>

@@ -6,14 +6,16 @@ public class Traffic {
 	private String no;
 	private String route;
 	private String coment;
+	private String uri;
 	public Traffic() { }
-	public Traffic(int tno, String ttype, String no, String route, String coment) {
+	public Traffic(int tno, String ttype, String no, String route, String coment, String uri) {
 		super();
 		this.tno = tno;
 		this.ttype = ttype;
 		this.no = no;
 		this.route = route;
 		this.coment = coment;
+		this.uri = uri;
 	}
 	public int getTno() {
 		return tno;
@@ -45,9 +47,15 @@ public class Traffic {
 	public void setComent(String coment) {
 		this.coment = coment;
 	}
+	public String getUri() {
+		return uri;
+	}
+	public void setUri(String uri) {
+		this.uri = uri;
+	}
 	@Override
 	public String toString() {
 		return "Traffic [tno=" + tno + ", ttype=" + ttype + ", no=" + no + ", route=" + route + ", coment=" + coment
-				+ "]";
+				+ ", uri=" + uri + "]";
 	}
 }

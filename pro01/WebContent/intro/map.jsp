@@ -11,8 +11,8 @@
 <%@ include file="/head.jsp" %>
 <style>
 .container { width:1400px; }
-.page { clear:both; height:100vh; }
-#page1 { background-color:#ececec; height:calc(100vh - 158px); }
+.page { clear:both; min-height:100vh; margin:0; padding:0; }
+#page1 { background-color:#ececec; }
 #page2 { background-color:#ffffff; }
 #page3 { background-color:#ececec; }
 #page4 { background-color:#ffffff; }
@@ -55,9 +55,9 @@ th.item3 { width:20%; }
 			</div>
 			<hr>
 			<h3 class="page_title">오시는 길</h3>
-			<div class="jumbotron">
+			<div style="padding-bottom:3rem">
 				<p>
-	
+					<img src="${path0 }/images/map3.png" alt="가산동지도" />
 				</p>
 			</div>
 			<div class="">
