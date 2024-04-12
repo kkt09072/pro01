@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.gasan.dto.Qna;
 import org.gasan.dto.Traffic;
 import org.gasan.dto.TrafficVO;
 
@@ -60,57 +59,5 @@ public class TrafficDAO {
 		return voList;
 	}
 	
-	public int insTraffic(Traffic t) {
-		int cnt = 0;
-		OracleDB oracle = new OracleDB();
-		try {
-			con = oracle.connect();
-			pstmt = con.prepareStatement(OracleDB.INS_TRAFFIC);
-			pstmt.setString(1, t.getTtype());
-			pstmt.setString(2, t.getNo());
-			pstmt.setString(3, t.getRoute());
-			pstmt.setString(4, t.getComent());
-			pstmt.setString(5, t.getUri());
-			cnt = pstmt.executeUpdate();
-		} catch(Exception e) {
-			e.printStackTrace();
-		} finally {
-			oracle.close(con, pstmt);
-		}
-		return cnt;
-	}
 	
-	public int editProTraffic(Traffic t) {
-		int cnt = 0;
-		OracleDB oracle = new OracleDB();
-		try {
-			con = oracle.connect();
-			pstmt = con.prepareStatement(SqlLang.UPD_TRAFFIC);
-			pstmt.setString(1, t.getRoute());
-			pstmt.setString(2, t.getComent());
-			pstmt.setInt(3, t.getTno());
-			cnt = pstmt.executeUpdate();
-		} catch(Exception e) {
-			e.printStackTrace();
-		} finally {
-			oracle.close(con, pstmt);
-		}
-		return cnt;
-	}
-	
-	public int delTraffic(int tno){
-		int cnt = 0;
-		OracleDB oracle = new OracleDB();
-		try {
-			con = oracle.connect();
-			pstmt = con.prepareStatement(SqlLang.DEL_TRAFFIC);
-			pstmt.setInt(1, tno);
-			cnt = pstmt.executeUpdate();
-		} catch(Exception e) {
-			e.printStackTrace();
-		} finally {
-			oracle.close(con, pstmt);
-		}
-		return cnt;
-	}
 }

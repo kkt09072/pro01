@@ -98,13 +98,13 @@ public class TrafficDAO {
 		return cnt;
 	}
 	
-	public int delTraffic(int tno){
+	public int delQuestion(int parno){
 		int cnt = 0;
 		OracleDB oracle = new OracleDB();
 		try {
 			con = oracle.connect();
-			pstmt = con.prepareStatement(SqlLang.DEL_TRAFFIC);
-			pstmt.setInt(1, tno);
+			pstmt = con.prepareStatement(SqlLang.DEL_QUESTION);
+			pstmt.setInt(1, parno);
 			cnt = pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();

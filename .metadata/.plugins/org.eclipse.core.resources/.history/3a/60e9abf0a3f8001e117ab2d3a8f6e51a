@@ -80,15 +80,15 @@ public class TrafficDAO {
 		return cnt;
 	}
 	
-	public int editProTraffic(Traffic t) {
+	public int editProQna(Qna q) {
 		int cnt = 0;
 		OracleDB oracle = new OracleDB();
 		try {
 			con = oracle.connect();
-			pstmt = con.prepareStatement(SqlLang.UPD_TRAFFIC);
-			pstmt.setString(1, t.getRoute());
-			pstmt.setString(2, t.getComent());
-			pstmt.setInt(3, t.getTno());
+			pstmt = con.prepareStatement(SqlLang.UPD_QNA);
+			pstmt.setString(1, q.getTitle());
+			pstmt.setString(2, q.getContent());
+			pstmt.setInt(3, q.getNo());
 			cnt = pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -98,13 +98,13 @@ public class TrafficDAO {
 		return cnt;
 	}
 	
-	public int delTraffic(int tno){
+	public int delQuestion(int parno){
 		int cnt = 0;
 		OracleDB oracle = new OracleDB();
 		try {
 			con = oracle.connect();
-			pstmt = con.prepareStatement(SqlLang.DEL_TRAFFIC);
-			pstmt.setInt(1, tno);
+			pstmt = con.prepareStatement(SqlLang.DEL_QUESTION);
+			pstmt.setInt(1, parno);
 			cnt = pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
