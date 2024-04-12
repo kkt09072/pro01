@@ -12,6 +12,8 @@ public class MySQLDB implements SqlLang {
 	final static String USERID = "root";
 	final static String USERPW = "1234";
 	final static String INS_NOTICE = "insert into notice values (default, ?, ?, default, 0)";
+	final static String LATEST_NOTICE = "select * from notice order by no desc limit 5";
+	final static String LATEST_QNA = "select * from qna order by parno desc, plevel asc limit 5";
 	Connection con = null;
 	
 	@Override

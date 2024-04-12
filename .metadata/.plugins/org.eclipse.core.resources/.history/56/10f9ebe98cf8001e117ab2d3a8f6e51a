@@ -1,0 +1,40 @@
+package org.gasan.ctrl.qna;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.gasan.dao.QnaDAO;
+import org.gasan.dto.Qna;
+
+@WebServlet("/QuestionIns.do")
+public class QuestionInsCtrl extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    public QuestionInsCtrl() {
+        super();
+    }
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
+		Qna qna = new Qna();
+		qna.setTitle(request.getParameter("title"));
+		qna.setContent(request.getParameter("content"));
+		QnaDAO dao = new QnaDAO();
+		int cnt = dao.insQuestion(qna);
+		
+		if(cnt>=1) {
+			
+		} else {
+			response.sendRedirect("/qna/qIns.jsp");
+		}
+	}
+
+}

@@ -1,0 +1,8 @@
+package org.gasan.dto;
+
+public class TrafficVO {
+	private int tno;
+	private String tytpe;
+	private String no;
+	
+}

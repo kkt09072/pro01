@@ -13,6 +13,10 @@ public class OracleDB implements SqlLang {
 	final static String USERPW = "1234";
 	final static String INS_NOTICE = "insert into notice values (nseq.nextval, ?, ?, sysdate, 0)";
 	final static String LATEST_NOTICE = "select * from (select * from notice order by no desc) where rownum<=5";
+	final static String LATEST_QNA = "select * from (select * from qna order by parno desc, plevel asc) where rownum<=5";
+	final static String INS_ANSWER = "insert into qna values(qseq.nextval,2,?,?,?,default,0,?)";
+	final static String INS_QUESTION = "insert into qna values(qseq.nextval,1,null,?,?,default,0,?)";
+	final static String UPD_PARNO_QUESTION = "update qna set parno=qseq.currval where no = (select * from (select no from qna order by no desc) where rownum<=1)";
 	Connection con = null;
 	
 	@Override

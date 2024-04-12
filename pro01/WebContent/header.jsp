@@ -47,7 +47,7 @@
 			<li class="item">
 				<a href="" class="dp1">이용안내</a>
 				<ul class="sub_menu">
-					<li><a href="${hpath }/tour/traffic.jsp">교통편 안내</a></li>
+					<li><a href="${hpath }/GetTrafficList.do">교통편 안내</a></li>
 					<li><a href="${hpath }/tour/building.jsp">주요 빌딩</a></li>
 					<li><a href="${hpath }/tour/association.jsp">주요 협회 단체</a></li>
 					<li><a href="${hpath }/tour/rest.jsp">맛집 안내</a></li>
@@ -59,7 +59,7 @@
 				<ul class="sub_menu">
 					<li><a href="${hpath }/NotiList.do">공지사항</a></li>
 					<li><a href="">자료실</a></li>
-					<li><a href="">묻고답하기</a></li>
+					<li><a href="${hpath }/GetQnaList.do">묻고답하기</a></li>
 				</ul>
 			</li>
 		</ul>
