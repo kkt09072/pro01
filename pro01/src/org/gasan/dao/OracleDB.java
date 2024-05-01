@@ -18,6 +18,8 @@ public class OracleDB implements SqlLang {
 	final static String INS_QUESTION = "insert into qna values(qseq.nextval,1,null,?,?,default,0,?)";
 	final static String UPD_PARNO_QUESTION = "update qna set parno=qseq.currval where no = (select * from (select no from qna order by no desc) where rownum<=1)";
 	final static String INS_TRAFFIC = "insert into traffic values (tseq.nextval,?,?,?,?,?);";
+	final static String LATEST_DATA = "select * from (select * from data order by no desc) where rownum<=5";
+	final static String INS_DATA = "insert into data values (bseq.nextval, ?, ?, ?, sysdate, 0)";
 	Connection con = null;
 	
 	@Override

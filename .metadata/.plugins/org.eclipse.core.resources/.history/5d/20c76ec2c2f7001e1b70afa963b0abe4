@@ -1,6 +1,0 @@
-@charset "UTF-8";
-#header { clear:both; height:100px; }
-.logo_wrap { float:left; width:128px; height:auto; }
-.logo_wrap a { display:block; width:100%; height:auto; }
-.logo_wrap a img { display:block; width:100%; height:auto; }
-#gnb { clear:both; display:block; width:80%; height:50px; float:right; }

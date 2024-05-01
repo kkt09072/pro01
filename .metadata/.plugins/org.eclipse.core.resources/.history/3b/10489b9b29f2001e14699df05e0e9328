@@ -1,7 +1,0 @@
-package org.gasan.test;
-
-public class OracleTest {
-	public static void main(String[] args) {
-		
-	}
-}

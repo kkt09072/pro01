@@ -29,6 +29,12 @@ public interface SqlLang {
 	String UPD_TRAFFIC = "update traffic set route=?, coment=? where tno=?";
 	String DEL_TRAFFIC = "delete from traffic where tno=?";
 	
+	String SELECT_ALL_DATA = "select * from data order by resdate desc";
+	String VISITED_UPD_DATA = "update data set visited=visited+1 where no=?";
+	String SELECT_DATA_BYNO = "select * from data where no=?";
+	String UPD_DATA = "update data set title=?, content=? where no=?";
+	String DEL_DATA = "delete from data where no=?";
+	
 	Connection connect();
 	void close(Connection con, PreparedStatement pstmt);
 	void close(Connection con, PreparedStatement pstmt, ResultSet rs);

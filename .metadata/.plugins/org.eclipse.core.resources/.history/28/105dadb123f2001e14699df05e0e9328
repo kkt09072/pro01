@@ -1,5 +1,0 @@
-package org.gasan.dao;
-
-public class MySQLDB {
-
-}

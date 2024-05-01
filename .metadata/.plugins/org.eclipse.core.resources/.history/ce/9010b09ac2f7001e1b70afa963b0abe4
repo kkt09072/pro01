@@ -1,2 +1,0 @@
-@charset "UTF-8";
-#gnb { clear:both; display:block; width:80%; height:50px; float:right; }
