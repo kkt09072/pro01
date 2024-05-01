@@ -4103,3 +4103,6 @@ Caused by: java.net.ConnectException: Connection refused: connect
 
 !ENTRY org.eclipse.wst.server.core 4 0 2024-05-01 16:28:18.664
 !MESSAGE Server Tomcat v9.0 Server at localhost failed to start.
+
+!ENTRY org.eclipse.wst.server.core 4 0 2024-05-01 17:07:59.598
+!MESSAGE Server Tomcat v9.0 Server at localhost failed to start.
