@@ -10,6 +10,7 @@
 			<ul>
 				<li><a href="${hpath }/member/terms.jsp">회원약관</a></li>
 				<li><a href="${hpath }/member/policy.jsp">개인정보처리방침</a></li>
+				<li><a href="${hpath }/qna/online.jsp">온라인 상담</a></li>
 			</ul>
 		</nav>
 		<div id="loc">
