@@ -26,7 +26,10 @@ public class MemberDAO {
 						rs.getString("pw"),
 						rs.getString("name"),
 						rs.getString("email"),
-						rs.getString("tel"));
+						rs.getString("tel"),
+						rs.getString("addr"),
+						rs.getString("postcode"));
+						
 				memList.add(mem);
 			}
 		} catch(Exception e){
@@ -51,6 +54,8 @@ public class MemberDAO {
 				mem.setName(rs.getString("name"));
 				mem.setEmail(rs.getString("email"));
 				mem.setTel(rs.getString("tel"));
+				mem.setAddr(rs.getString("addr"));
+				mem.setPostcode(rs.getString("postcode"));
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -71,6 +76,8 @@ public class MemberDAO {
 			pstmt.setString(3, mem.getName());
 			pstmt.setString(4, mem.getEmail());
 			pstmt.setString(5, mem.getTel());
+			pstmt.setString(6, mem.getAddr());
+			pstmt.setString(7, mem.getPostcode());
 			cnt = pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();

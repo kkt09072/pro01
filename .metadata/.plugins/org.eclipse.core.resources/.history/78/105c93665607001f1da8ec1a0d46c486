@@ -1,0 +1,11 @@
+package org.gasan.test;
+
+import org.gasan.util.AES256;
+
+public class Md5Test {
+	public static void main(String[] args) {
+		AES256 md5 = new AES256();
+		String pwd = "1234";
+		
+	}
+}

@@ -2,7 +2,14 @@ package org.gasan.ctrl.member;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +20,7 @@ import javax.servlet.http.HttpSession;
 
 import org.gasan.dao.MemberDAO;
 import org.gasan.dto.Member;
+import org.gasan.util.AES256;
 
 @WebServlet("/LogInPro.do")
 public class LogInProCtrl extends HttpServlet {
@@ -37,6 +45,13 @@ public class LogInProCtrl extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		RequestDispatcher view;
 		
+		String key = "%02x";
+		
+		try {
+			mem.setPw(AES256.decryptAES256(mem.getPw(), key));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		if(id.equals(mem.getId()) && pw.equals(mem.getPw())) { //로그인 처리 대상
 			session.setAttribute("sid", mem.getId());
 			session.setAttribute("sname", mem.getName());

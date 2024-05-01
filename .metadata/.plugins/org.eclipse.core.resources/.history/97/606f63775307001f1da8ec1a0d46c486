@@ -1,0 +1,5 @@
+package org.gasan.util;
+
+public class AES256 {
+
+}

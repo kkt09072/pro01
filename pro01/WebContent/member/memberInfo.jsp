@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
 <c:set var="path0" value="<%=request.getContextPath() %>" />    
 <!DOCTYPE html>
 <html>
@@ -65,6 +66,15 @@
 							<th><label for="tel">전화번호</label></th>
 							<td>
 								<input type="tel" name="tel" id="tel" class="form-control" value="${mem.tel }" required>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="tel">주소</label></th>
+							<td>
+								<c:set var="address" value="${fn:split(mem.addr, '$')}"/>
+								<input type="text" name="address1" id="address1" class="form-control" value="${address[0] }" readonly><br>
+								<input type="text" name="address2" id="address2" class="form-control" value="${address[1] }" readonly><br>
+								<input type="text" name="postcode" id="postcode" placeholder="우편번호 입력" class="form-control" value="${mem.postcode }" style="width:160px" readonly><br>
 							</td>
 						</tr>
 					</tbody>

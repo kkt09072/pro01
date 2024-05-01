@@ -10,6 +10,10 @@ select * from member;
 insert into member values ('admin','1234','관리자','admin@gasan.org','010-1234-5678');
 insert into member values ('jdj','ac89','정도준','jdjac@naver.com','010-7979-1004');
 
+update member set addr='가산동 $ 287', postcode='12-345' where id='admin'; -- 12345
+update member set addr='구로동 $ 381', postcode='45-678' where id='jdj'; -- ac89
+update member set addr='을지로 47 $ 을지IT빌딩 204호', postcode='36-124' where id='kkt'; -- 4321
+
 select * from traffic;
 
 alter table traffic add uri varchar2(150);

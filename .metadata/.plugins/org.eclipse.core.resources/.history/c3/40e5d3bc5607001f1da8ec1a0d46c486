@@ -1,0 +1,10 @@
+package org.gasan.test;
+
+public class Sha256Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

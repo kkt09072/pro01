@@ -71,6 +71,16 @@
 								<input type="tel" name="tel" id="tel" class="form-control" required>
 							</td>
 						</tr>
+						<tr>
+							<th><label for="post_btn">주소</label></th>
+							<td>
+								<p>주소 입력은 우편번호를 검색하여 입력합니다.</p>	
+								<input type="text" name="address1" id="address1" placeholder="기본 주소 입력" class="form-control" required><br>
+								<input type="text" name="address2" id="address2" placeholder="상세 주소 입력" class="form-control" required><br>
+								<input type="text" name="postcode" id="postcode" placeholder="우편번호 입력" class="form-control" style="width:160px" required><br>
+								<button type="button" id="post_btn" class="btn btn-primary" onclick="findAddr()">우편번호 검색</button>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 				<hr>
@@ -117,6 +127,25 @@
 				});
 			}
 			</script>
+			<script>
+            function findAddr(){
+                new daum.Postcode({
+                    oncomplete:function(data){
+                        console.log(data);
+                        var roadAddr = data.roadAddress;
+                        var jibunAddr = data.jibunAddress;
+                        document.getElementById("postcode").value = data.zonecode;
+                        if(roadAddr !== ''){
+                            document.getElementById("address1").value = roadAddr;
+                        } else if(jibunAddr !== ''){
+                            document.getElementById("address1").value = jibunAddr;
+                        }
+                        document.getElementById("address2").focus();
+                    }
+                }).open();
+            }
+			</script>
+			<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>	
 		</div>
 	</section>	
 </div>

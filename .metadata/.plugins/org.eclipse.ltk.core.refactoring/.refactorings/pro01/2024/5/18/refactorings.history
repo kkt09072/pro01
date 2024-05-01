@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;org.gasan.test.CrytoTest&apos; to &apos;Aes256Test&apos;&#x0D;&#x0A;- Original project: &apos;pro01&apos;&#x0D;&#x0A;- Original element: &apos;org.gasan.test.CrytoTest&apos;&#x0D;&#x0A;- Renamed element: &apos;org.gasan.test.Aes256Test&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;CrytoTest&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;org.gasan.test{CrytoTest.java[CrytoTest" matchStrategy="1" name="Aes256Test" qualified="false" references="true" similarDeclarations="false" stamp="1714525171521" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,7 @@
+package org.gasan.test;
+
+public class Md5Test {
+	public static void main(String[] args) {
+		AES256 md5 = new AES256();
+	}
+}

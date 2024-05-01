@@ -1,0 +1,13 @@
+package org.gasan.test;
+
+import java.security.NoSuchAlgorithmException;
+
+import org.gasan.util.AES256;
+
+public class Md5Test {
+	public static void main(String[] args) throws NoSuchAlgorithmException{
+		AES256 crypto = new AES256();
+		String pwd = "1234";
+		String res = crypto.md5(pwd);
+	}
+}
